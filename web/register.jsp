@@ -2,25 +2,31 @@
 <html>
 <head>
     <title>Register | MegaCityCab</title>
+    <link rel="stylesheet" type="text/css" href="css/register.css">
+    <script src="js/register.js"></script>
 </head>
 <body>
-    <h2>Register</h2>
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registerForm" action="RegisterServlet" method="post">
+            <label>Username:</label>
+            <input type="text" name="username" id="username" required class="input-field"><br>
 
-    <% if (request.getParameter("error") != null) { %>
-        <p style="color:red;"><%= request.getParameter("error") %></p>
-    <% } %>
+            <label>Password:</label>
+            <input type="password" name="password" id="password" required class="input-field"><br>
 
-    <form action="RegisterServlet" method="post">
-        <label>Username:</label>
-        <input type="text" name="username" required><br>
+            <label>Confirm Password:</label>
+            <input type="password" name="confirmPassword" id="confirmPassword" required class="input-field"><br>
 
-        <label>Password:</label>
-        <input type="password" name="password" required><br>
+            <span id="togglePasswordText" class="toggle-password" onclick="togglePassword()">Show Password</span>
 
-        <button type="submit">Register</button>
-    </form>
+            <label>Role:</label>
+            <select name="role" class="input-field">
+                <option value="customer">Customer</option>
+            </select><br>
 
-    <!-- Link to Login Page -->
-    <p>Already have an account? <a href="login.jsp">Login here</a></p>
+            <button type="submit">Register</button>
+        </form>
+    </div>
 </body>
 </html>

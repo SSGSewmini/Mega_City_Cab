@@ -31,5 +31,7 @@
     </form>
 
     <p><a href="viewBookings.jsp">View My Bookings</a></p>
+   
+
 </body>
 </html>

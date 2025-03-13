@@ -1,27 +1,20 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
 <head>
     <title>Login | MegaCityCab</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script src="js/login.js"></script>
 </head>
+
 <body>
-    <h2>Login</h2>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm" action="LoginServlet" method="post">
+            <label>Username:</label>
+            <input type="text" name="username" id="username" required class="input-field"><br>
 
-    <!-- Show error message if login fails -->
-    <% if (request.getParameter("error") != null) { %>
-        <p style="color:red;">Invalid Username or Password!</p>
-    <% } %>
+            <label>Password:</label>
+            <input type="password" name="password" id="password" required class="input-field"><br>
 
-    <form action="LoginServlet" method="post">
-        <label>Username:</label>
-        <input type="text" name="username" required><br>
-        
-        <label>Password:</label>
-        <input type="password" name="password" required><br>
-        
-        <button type="submit">Login</button>
-    </form>
-
-    <!-- Link to Register Page -->
-    <p>New Customer? <a href="register.jsp">Register Here</a></p>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </body>
-</html>
